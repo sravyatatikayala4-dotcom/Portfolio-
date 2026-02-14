@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sravya Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+/* FIX 1: body scroll issue */
+body{
+  background:#0f172a;
+  color:#e5e7eb;
+  transition:1s;
+  min-height:100vh;
+  overflow-y:auto;
+}
+
+/* Rainbow */
+body.rainbow{
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb);
+  color:#0e122a;
+}
+
+/* Navbar */
+nav{
+  background:#020617;
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#38bdf8;
+}
+
+.nav-links{
+  margin-left:auto;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.nav-links a:hover{color:#38bdf8}
+
+/* FIX 2: page height issue */
+.page{
+  display:none;
+  padding:80px 50px;
+  max-width:1100px;
+  margin:auto;
+  min-height:100vh;
+  animation:fade .7s ease;
+}
+
+.page.active{
+  display:block;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h1 span{color:#38bdf8}
+
+/* HOME */
+.home-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.home-text{flex:1}
+
+.home-img{
+  flex:1;
+  text-align:right;
+}
+
+.home-img img{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid #38bdf8;
+  box-shadow:0 0 25px rgba(56,189,248,0.6);
+}
+
+/* Skills */
+.skill span{
+  display:inline-block;
+  background:#a7819c;
+  padding:10px 18px;
+  margin:8px;
+  border-radius:20px;
+}
+
+/* Cards */
+.card{
+  background:#f39df9;
+  padding:20px;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+/* Contact */
+.contact-box{
+  background:#f2a5f3;
+  padding:25px;
+  border-radius:15px;
+  max-width:500px;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Sravya</div>
+  <div class="nav-links">
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('skills')">Skills</a>
+    <a onclick="showPage('projects')">Projects</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="home-box">
+    <div class="home-text">
+      <h1>Hi, I'm <span>Sravya</span></h1>
+
+      <p style="margin-top:40px;font-size:30px">
+        Undergraduate Student | Aspiring Developer
+      </p>
+
+      <p style="margin-top:40px;font-size:25px">
+        I love learning new technologies and building creative projects
+that solve real-world problems. I am a motivated and detail-oriented undergraduate student with a strong
+interest in web development, artificial intelligence, and machine learning.
+I enjoy transforming ideas into interactive, user-friendly applications
+and continuously improving my technical skills by working on real-world projects.
+      </p>
+    </div>
+
+    <div class="home-img">
+      <!-- IMPORTANT: image same folder lo petti name ivvu -->
+      <img src="C:\Users\SRAVYA\OneDrive\Desktop\sravya\sravya photos\WhatsApp Image 2025-08-14 at 14.34.52_3dff885b.jpg" alt="Sravya">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <h1>About Me</h1>
+  <p style="margin-top:40px;font-size:25px">
+    I am an undergraduate student with a strong interest in
+Artificial Intelligence, Machine Learning, and Web Development.
+I have hands-on experience in building responsive websites using HTML, CSS,
+and basic JavaScript, along with a foundational understanding of Python and
+databases such as MySQL. I constantly strive to enhance my technical skills
+by learning new tools, frameworks, and best practices.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="page">
+  <div class="skill" style="margin-top:20px">
+    <h2>Technical Skills</h2><br>
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript (Basic)</span>
+
+    <h2 style="margin-top:30px">Soft Skills</h2><br>
+    <span>Quick Learner</span>
+   <span>Communication Skills</span> 
+   <span>Active Listener</span> 
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="page">
+  <h2>Projects</h2><br><br>
+
+  <div class="card">
+    <h3>Email Phishing Detection</h3><br>
+    <p>AI based system that detects phishing emails.</p>
+  </div><br><br>
+
+  <div class="card">
+    <h3>Portfolio Website</h3><br>
+    <p>Responsive portfolio built using HTML, CSS and JS.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <h2>Contact Me 📞</h2><br><br>
+
+  <div class="contact-box" style="margin-top:15px;font-size:20px">
+    <p><b>Email:</b> sravyatatikayala@gmail.com</p><br>
+    <p><b>Phone:</b> +91 9392162499</p><br>
+    <p><b>GitHub:</b> github.com/sravya</p><br>
+    <p><b>LinkedIn:</b> linkedin.com/in/sravya</p>
+  </div><br><br>
+  <h2>View Route Map</h2><br><br>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30590.021439848315!2d81.950943000957!3d16.588952136753143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37ef44178c0653%3A0x11e3f5e136e28aee!2sBandarulanka%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1766480843569!5m2!1sen!2sin" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" loading="lazy">
+    </iframe>
+</section>
+
+<footer>
+  © 2026 Sravya | All Rights Reserved
+  </footer>
+
+<script>
+function showPage(page){
+  document.querySelectorAll('.page')
+    .forEach(p => p.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+}
+
+/* Rainbow auto */
+window.onload = () => {
+  document.body.classList.add("rainbow");
+};
+</script>
+
+</body>
+</html>
